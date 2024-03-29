@@ -29,10 +29,26 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent =
       'You guessed Correctly!!🎉';
   } else if (guess < secretNumber) {
-    document.querySelector('.message').textContent =
-      'You need to guess higher 👆';
+    if (score > 1) {
+      document.querySelector('.message').textContent =
+        'You need to guess higher 👆';
+      score = score - 1;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = 'You lost the game ;(';
+
+      document.querySelector('.score').textContent = 0;
+    }
   } else if (guess > secretNumber) {
-    document.querySelector('.message').textContent =
-      'You need to guess lower 👇';
+    if (score > 1) {
+      document.querySelector('.message').textContent =
+        'You need to guess lower 👇';
+      score = score - 1;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = 'You lost the game ;(';
+
+      document.querySelector('.score').textContent = 0;
+    }
   }
 });
