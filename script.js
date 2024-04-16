@@ -8,11 +8,11 @@ const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
 
-document.querySelector('.number').textContent = secretNumber;
+//document.querySelector('.number').textContent = secretNumber;
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
-  console.log(typeof guess, guess);
+  // console.log(typeof guess, guess);
 
   if (!guess) {
     //if there is no guess (0 is falsey value)
